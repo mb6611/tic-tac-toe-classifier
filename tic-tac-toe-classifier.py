@@ -82,4 +82,4 @@ epochs = history.epoch
 hist = pd.DataFrame(history.history)
 
 print(hist)
-#loss = hist["val_accuracy"]
+loss = hist["val_accuracy"]
