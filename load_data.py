@@ -5,10 +5,10 @@ from board import Board, GameGenerator
 
 # reaed .pkl files
 
-current_directory = os.getcwd()+'/tic_tac_toe_classifier/'
-data_features = (pd.read_pickle(current_directory + 'features.pkl')[0].to_numpy()).tolist()
+current_directory = os.getcwd()
+data_features = (pd.read_pickle(current_directory + '/features.pkl')[0].to_numpy()).tolist()
 
-data_labels = pd.read_pickle(current_directory + 'labels.pkl').to_numpy()
+data_labels = pd.read_pickle(current_directory + '/labels.pkl').to_numpy()
 data_labels = np.reshape(data_labels, (len(data_labels),))
 
 # build data features from DataFrames
