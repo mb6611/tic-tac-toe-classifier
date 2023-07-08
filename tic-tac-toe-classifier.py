@@ -57,7 +57,7 @@ print(model.predict([draw_move_history_data, current_move_data]))
 
 
 
-"""
+
 
 # compile model
 opt = SGD(learning_rate=0.00001)
@@ -75,7 +75,7 @@ history = model.fit(
     [draw_move_history_data, current_move_data],
     train_labels_df.values,
     batch_size=10,
-    epochs=50,
+    epochs=20,
     validation_split=0.2)
 
 epochs = history.epoch
@@ -83,4 +83,3 @@ hist = pd.DataFrame(history.history)
 
 print(hist)
 #loss = hist["val_accuracy"]
-"""
