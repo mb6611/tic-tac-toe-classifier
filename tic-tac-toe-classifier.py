@@ -71,12 +71,15 @@ model.compile(
 
 inputs = [draw_move_history_data, current_move_data]
 
+print_weights = tf.keras.callbacks.LambdaCallback(on_epoch_end=lambda batch, logs: print(model.layers[0].get_weights()))
+
 history = model.fit(
     [draw_move_history_data, current_move_data],
     train_labels_df.values,
     batch_size=10,
     epochs=20,
-    validation_split=0.2)
+    validation_split=0.2,
+    callbacks=[print_weights])
 
 epochs = history.epoch
 hist = pd.DataFrame(history.history)
